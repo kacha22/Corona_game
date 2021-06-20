@@ -29,11 +29,10 @@ score_final = pygame.font.SysFont("bahnschrift", 25)
 virus_image = pygame.image.load('Virus4.png')
 virus_image = pygame.transform.scale(virus_image, (12,12))
 
-
 def our_snake(snake_list):
     for x in snake_list:
-        pygame.draw.rect(display, green,
-                         pygame.Rect(x[0], x[1], 10, 10))
+        pygame.draw.rect(display, green, pygame.Rect(x[0], x[1], 10, 10))
+
 def inicio(msg, color):
     mesg = press_initie.render(msg, True, color)
     display.blit(mesg, [dis_width / 10, dis_height / 3])
@@ -65,7 +64,6 @@ def gameLoop():
 
     foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
     foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
-
 
     while not game_over:
 
@@ -130,7 +128,6 @@ def gameLoop():
             length_of_snake += 1
 
         clock.tick(snake_speed)
-
 
     pygame.quit()
     quit()
